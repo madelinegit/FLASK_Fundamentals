@@ -1,0 +1,126 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb_wk9class
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `mydb_wk9class` ;
+
+-- -----------------------------------------------------
+-- Schema mydb_wk9class
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb_wk9class` DEFAULT CHARACTER SET utf8 ;
+-- -----------------------------------------------------
+-- Schema new_schema1
+-- -----------------------------------------------------
+USE `mydb_wk9class` ;
+
+-- -----------------------------------------------------
+-- Table `mydb_wk9class`.`table1`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb_wk9class`.`table1` ;
+
+CREATE TABLE IF NOT EXISTS `mydb_wk9class`.`table1` (
+)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb_wk9class`.`table2`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb_wk9class`.`table2` ;
+
+CREATE TABLE IF NOT EXISTS `mydb_wk9class`.`table2` (
+)
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb_wk9class`.`Bank`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb_wk9class`.`Bank` ;
+
+CREATE TABLE IF NOT EXISTS `mydb_wk9class`.`Bank` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `address` VARCHAR(255) NULL,
+  `phone` VARCHAR(10) NULL,
+  `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `name` VARCHAR(45) NULL,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+USE `mydb_wk9class` ;
+
+-- -----------------------------------------------------
+--  routine1
+-- -----------------------------------------------------
+
+USE `mydb_wk9class`;
+DROP  IF EXISTS `mydb_wk9class`.`routine1`;
+
+DELIMITER $$
+USE `mydb_wk9class`$$
+$$
+
+DELIMITER ;
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+
+Executing SQL script in server
+ERROR: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')
+ENGINE = InnoDB' at line 2
+SQL Code:
+        CREATE TABLE IF NOT EXISTS `mydb_wk9class`.`table1` (
+        )
+        ENGINE = InnoDB
+
+SQL script execution finished: statements: 7 succeeded, 1 failed
+
+Fetching back view definitions in final form.
+Could not get definition for mydb_wk9class.view1 from server
+1 views were read back.
+
+
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb_wk9class
+-- -----------------------------------------------------
+DROP SCHEMA IF EXISTS `mydb_wk9class` ;
+
+-- -----------------------------------------------------
+-- Schema mydb_wk9class
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `mydb_wk9class` DEFAULT CHARACTER SET utf8 ;
+USE `mydb_wk9class` ;
+
+-- -----------------------------------------------------
+-- Table `mydb_wk9class`.`Bank`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb_wk9class`.`Bank` ;
+
+CREATE TABLE IF NOT EXISTS `mydb_wk9class`.`Bank` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NULL,
+  `address` VARCHAR(255) NULL,
+  `phone` VARCHAR(10) NULL,
+  `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;

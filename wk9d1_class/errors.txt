@@ -1,0 +1,5 @@
+TypeError
+TypeError: render_template() missing 1 required positional argument: 'template_name_or_list'
+
+18:45:55	INSERT INTO Bank (name, address, phone) VALUES("chase". "123 chase ave", "800198237")	Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '. "123 chase ave", "800198237")' at line 1	0.00093 sec
+#?? i dont see that in line one of anything

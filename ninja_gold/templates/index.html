@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Ninja Gold </title>
+</head>
+<body>
+    <div class = "container p-4" style= "height: 800px;">
+        <div class= "d-flex">
+            <h2> Your Gold </h2>
+            <div class="golden_counter">
+                <!-- <div class="form-control"> other bootstrap form -->
+                <div class = "bg-body-tertiary border rounded">
+                    <p class="mt-1">${{session.earnings}}.00</p>
+                    <!-- align middle should have worked? -->
+                </div>
+            </div>
+        </div>
+        <div class = "d-flex justify-content-between">
+            <div class = "bg-body-tertiary border rounded">
+                <h1>Farm</h1>
+                <p>(earns 10-20 golds) </p>
+                <form action="/ninja_gold" method="post">
+                    <input type="hidden" name="money" value="is-a-farmer">
+                    <!-- The Hidden Value is refrenced in /ninja_gold IF Statement -->
+                    <!-- The Hidden Name is reference in /ninja_gold "request.form" -->
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class = "bg-body-tertiary border rounded">
+                <h1>Cave</h1>
+                <p>(earns 5-10 golds) </p>
+                <form action="/ninja_gold" method="post">
+                    <input type="hidden" name="money" value="is-a-caveman">
+                    <!-- The Hidden Value is refrenced in /ninja_gold IF Statement -->
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class = "bg-body-tertiary border rounded">
+                <h1>Home</h1>
+                <p>(earns 2-5 golds) </p>
+                <form action="/ninja_gold" method="post">
+                    <input type="hidden" name="money" value="is-a-homeowner">
+                    <!-- The Hidden Value is refrenced in /ninja_gold IF Statement -->
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+            <div class = "bg-body-tertiary border rounded">
+                <h1>Casino</h1>
+                <p>(wins or takes 10-20 golds) </p>
+                <form action="/ninja_gold" method="post">
+                    <input type="hidden" name="money" value="is-a-gambler">
+                    <!-- The Hidden Value is refrenced in /ninja_gold IF Statement -->
+                    <input type="submit" value="Find Gold!">
+                </form>
+            </div>
+        </div>
+            <!-- <div class = ".container-fluid"></div> -->
+        <div class="bg-body-tertiary border p-4 rounded">
+            <h1>Activities:</h1>
+            {% for i in session ['gold_log'] %}
+            {%if 'Lost' in i%}
+            <p class="text text-danger">{{i}}</p>
+            {%else%}
+            <p class="text text-success">{{i}}</p>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <!-- if text includes "lost" then danger // red text else//green text 
+            p class text makes it show up normally. -->
+        <button type="button" class="btn btn-outline-primary">
+            <a href="/clear">Reset</a>
+        </button>
+    </div>
+</body>
+</html>

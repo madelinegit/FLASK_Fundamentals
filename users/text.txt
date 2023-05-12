@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "/Users/madelinegall/Desktop/python/flask_mysql/crud/users/server.py", line 2, in <module>
+    from user_db import User
+ModuleNotFoundError: No module named 'user_db'
+(users) madelinegall@Madelines-MacBook-Air users % python3 server.py
+Traceback (most recent call last):
+  File "/Users/madelinegall/Desktop/python/flask_mysql/crud/users/server.py", line 2, in <module>
+    from user_db_model import User
+ModuleNotFoundError: No module named 'user_db_model'
+(users) madelinegall@Madelines-MacBook-Air users % python3 server.py
+Traceback (most recent call last):
+  File "/Users/madelinegall/Desktop/python/flask_mysql/crud/users/server.py", line 2, in <module>
+    from users_db_model import User
+ModuleNotFoundError: No module named 'users_db_model'
+(users) madelinegall@Madelines-MacBook-Air users % python3 server.py
+Traceback (most recent call last):
+  File "/Users/madelinegall/Desktop/python/flask_mysql/crud/users/server.py", line 2, in <module>
+    from users_db import User
+ModuleNotFoundError: No module named 'users_db'
+(users) madelinegall@Madelines-MacBook-Air users % python3 server.py
+Traceback (most recent call last):
+  File "/Users/madelinegall/Desktop/python/flask_mysql/crud/users/server.py", line 2, in <module>
+    from users import User
+ModuleNotFoundError: No module named 'users'
+(users) madelinegall@Madelines-MacBook-Air users % python3 server.py
+Traceback (most recent call last):
+  File "/Users/madelinegall/Desktop/python/flask_mysql/crud/users/server.py", line 2, in <module>
+    from users import User
+ModuleNotFoundError: No module named 'users'
+(users) madelinegall@Madelines-MacBook-Air users % 

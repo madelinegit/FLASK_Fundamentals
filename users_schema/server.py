@@ -1,32 +1,19 @@
-from flask import Flask, render_template, request, redirect
+# from flask_app import app
+# from flask import render_template, redirect, reqest, session
 
-from users import User
+from flask_app import app
+# from flask_app.models.models_user import User
+from flask_app.controllers import controllers_users
 
-app=Flask(__name__)
+# from user import User
+#from (place) import (thing)
 
-@app.route('/')
-def index():
-    return redirect('/users')
+#should there be a create route here?
 
-@app.route('/users')
-def users():
-    return render_template("users.html", users=User.get_all())
-#gets all the stuff via OOP
 
-@app.route('/user/new')
-def new():
-    return render_template("/new_user.html")
 
-@app.route('/user/create', methods=['POST'])
-def create():
-    print(request.form)
-    data = {
-        'firstname' : request.form['firstname'],
-        'lastname' : request.form['lastname'],
-        'email' : request.form['email']
-    }
-    User.create(data)
-    return redirect('/users')
 
 if __name__=="__main__":
     app.run(debug=True)
+
+#Go thru modularization apges in the platform

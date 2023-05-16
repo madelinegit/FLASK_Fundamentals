@@ -1,0 +1,29 @@
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+
+File "/Users/madelinegall/Desktop/users_schema/flask_app/controllers/controllers_users.py", line 7, in index
+users = User.get_all()
+        ^^^^^^^^^^^^^^Open an interactive python shell in this frame
+File "/Users/madelinegall/Desktop/users_schema/flask_app/models/models_user.py", line 28, in get_all
+results= connectToMySQL(cls.DB).query_db(query)
+         ^^^^^^^^^^^^^^^^^^^^^^
+File "/Users/madelinegall/Desktop/users_schema/flask_app/config/mysqlconnection.py", line 44, in connectToMySQL
+return MySQLConnection(db)
+       ^^^^^^^^^^^^^^^^^^^
+File "/Users/madelinegall/Desktop/users_schema/flask_app/config/mysqlconnection.py", line 7, in __init__
+connection = pymysql.connect(host = 'localhost',
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([Errno 61] Connection refused)")
+
+File "/Users/madelinegall/Desktop/users_schema/flask_app/controllers/controllers_users.py", line 37, in edit_user_page
+return render_template('edit_user.html', one_user=User.get_one(id))
+                                                  ^^^^^^^^^^^^^^^^Open an interactive python shell in this frame
+File "/Users/madelinegall/Desktop/users_schema/flask_app/models/models_user.py", line 20, in get_one
+results= connectToMySQL(cls.DB).query_db(query.data)
+         ^^^^^^^^^^^^^^^^^^^^^^
+File "/Users/madelinegall/Desktop/users_schema/flask_app/config/mysqlconnection.py", line 44, in connectToMySQL
+return MySQLConnection(db)
+       ^^^^^^^^^^^^^^^^^^^
+File "/Users/madelinegall/Desktop/users_schema/flask_app/config/mysqlconnection.py", line 7, in __init__
+connection = pymysql.connect(host = 'localhost',

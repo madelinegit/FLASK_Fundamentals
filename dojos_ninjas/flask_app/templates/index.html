@@ -36,7 +36,8 @@
                 <tbody>
                     {% for dojo in dojos %}
                     <tr>
-                        <td>{{dojo.name}}</td>
+                        <td><a href ="/ninjas/show/{{dojo.id}}">{{dojo.name}}</a></td>
+                    <!-- Dot notation, not an underschore dojo_id -->
                     </tr>
                     {% endfor %}
                     <!-- Called Dot Notation -->

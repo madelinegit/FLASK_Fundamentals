@@ -3,7 +3,6 @@ from flask import request, render_template, redirect, session
 from flask_app.models.models_ninja import Ninja #from burger import Burger
 from flask_app.models.models_dojo import Dojo
 
-
 #CREATE NEW USER PAGE ROUTE
 @app.route('/new/ninja')
 def new_ninja_page():
@@ -24,6 +23,3 @@ def create_ninja():
     print(data)
     return redirect('/')
 
-
-if __name__=="__main__":
-    app.run(debug=True)

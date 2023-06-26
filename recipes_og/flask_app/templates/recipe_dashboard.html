@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>recipe_dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <div class="d-flex justify-content-end mt-3">
+            <!-- <a href="/dashboard" class="btn btn-secondary me-3"> Back</a> -->
+            <a href="/logout" class="btn btn-secondary"> Log Out</a>
+        </div>
+        <h1 class= "text-center">Welcome {{user.firstname}}</h1>
+        <div class="messages text-secondary text-center">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for m in messages %}
+                            {{m}}
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+        </div>
+        <p class="text-left">All Posted Recipes:</p>
+        <a href="/create" class="btn btn-info"> Create </a>
+        <div class="d-flex align-center justify-content-between align-items-center">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th> Name:</th>
+                        <th> Under 30 mins?</th>
+                        <th> Posted By: </th>
+                        <th> Actions: </th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for recipe in all_recipes %}
+                    <tr>
+                        <td>{{recipe.name}}</td>
+                        <td>{{recipe.thirtymin}}</td><!-- <td>|% if thirtymin == Yes %|Yes|% else %|No|% endif %|</td> -->
+                        <td>{{recipe.cook.firstname}}</td>
+                        <td> <a href="/recipe_read/{{recipe.id}}">View </a>
+                        {% if recipe.user_id == session.user_id %}
+                        <a href="/recipe_edit/{{recipe.id}}">| Edit |</a> <a href="/recipe_delete/{{recipe.id}}"> Delete</a></td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    <div class="footer d-flex justify-content-center mt-4">
+        <p class="mt-4">&copy Copyright - Recipe Website</p>
+    </div>
+    </div>
+</body>

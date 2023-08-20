@@ -1,0 +1,78 @@
+.aboutsec {
+    justify-content: space-between;
+    background: #393e46;
+    color: antiquewhite;
+    padding: 20px;
+    border-radius: 8px;
+    /* box-shadow: 0px 4px 8px #fca331 (0, 0, 0, 1); */
+    /* transition: transform 0.3s ease; */
+    margin: 50px;
+}
+
+/* not working! */
+.aboutimage {
+    max-width:50%;
+    border-radius: 10px;
+    /* position:absolute; */
+}
+  /* Media query for smaller screens */
+@media (max-width: 768px) {
+    .aboutimage {
+    max-width: 40%;
+}
+}
+/* THAT WORKING? Images get really squished */
+/* .aboutimage { */
+    /* max-width:50%; */
+    /* max-height: 50%; */
+
+    /* border-radius: 8px; */
+/* } */
+/* Media query for smaller screens */
+/* @media (max-width: 768px) { */
+    /* .aboutimage { */
+
+    /* min-width: 30%; */
+    /* min-height: 30%; */
+/* } */
+/* } */
+
+.aboutsec:hover {
+    transform: translateY(-5px);
+}
+
+.about h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.about p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.abouttext {
+max-width: 40%;
+}
+@media (max-width: 768px) {
+    .abouttext {
+    max-width: 40%;
+    }
+    p, h2 {
+        font-size:  10px;
+    }
+}
+@media (max-width: 768px) {
+    .abouttext {
+    max-width: 40%;
+    }
+}
+@media (max-width: 768px) {
+    .abouttext h2 {
+    font-size: 15px;
+    }
+
+    .abouttext p {
+    font-size: 11px;
+    }
+}

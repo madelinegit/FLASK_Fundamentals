@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
+<link rel="stylesheet" href= "{{ url_for('static', filename='css/styleabout.css') }}">
+<link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+<title>J Norse</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark dark container-fluid">
+    <div class="container-fluid">
+    <a class="navbar-brand" style="color:antiquewhite" href="/" >
+        <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+    </a>
+    <a href="/about" class="nav-title" style="font-weight: bolder;">J Nurse Astrology</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a href="/menu" class="nav-link">Menu</a>
+            </li>
+            <li class="nav-item">
+                <a href="/bloghome" class="nav-link">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a href="/book" class="nav-link">Book</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="about mt-5 mb-5">
+    <div class="">
+        <div class="aboutsec row">
+            <div class="abouttext col">
+                <h2>About the Website Owner</h2>
+                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
+            </div>
+            <!-- <div class=""> -->
+                <img src="{{url_for('static', filename='imgs/img2.png')}}" class="aboutimage" alt="">
+            <!-- </div> -->
+        </div>
+        <!-- <div class=""></div> -->
+        <div class="aboutsec row">
+            <img src=" {{url_for('static', filename='imgs/img2.png')}}" class="aboutimage" alt="">
+            <!-- position absolute messed things up -->
+            <div class="abouttext col">
+                <h2>Jyotish Lineage</h2>
+                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum tincidunt a sit amet justo.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="container mt-5"> -->
+<!-- <div class="row"> -->
+    <!-- <div class="col-lg-6"> -->
+    <!-- <div class="aboutsec"> -->
+        <!-- <h2>About the Website Owner</h2> -->
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum tincidunt a sit amet justo.</p> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- <div class="col-lg-6"> -->
+    <!-- <div class="aboutsec"> -->
+        <!-- <h2>About the Culture</h2> -->
+        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum tincidunt a sit amet justo.</p> -->
+    <!-- </div> -->
+    <!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+
+
+<div class="newsletter">
+    <h2 class="text-center">Newsletter</h2>
+    <p class="text-center">Monthly Astro-Alerts, No Spam.</p>
+    <form action="#" method="post" class="newsform d-flex justify-content-center">
+        <input type="email" id="email" name="email" class="newsform" styles="" placeholder="Your Email" required>
+        <button type="submit" class= "newform-button btn">Subscribe</button>
+    </form>
+</div>
+<div class="footer style-dark">
+    <div class="footer-text ">
+        J Nur @ Copyright 2023 | Astrology LLC
+    </div>
+    <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
+        <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>
+
+<script>
+    // Add this script to handle navigation dropdown on mobile
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarToggler = document.querySelector(".navbar-toggler");
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+
+    navbarToggler.addEventListener("click", function() {
+    if (navbarCollapse.classList.contains("show")) {
+        navbarCollapse.classList.remove("show");
+    } else {
+        navbarCollapse.classList.add("show");
+    }
+    });
+});
+</script>
+</body>
+</html>

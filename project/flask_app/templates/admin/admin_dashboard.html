@@ -12,68 +12,90 @@
 
 
 
-<nav class="navbar navbar-dark dark container-fluid">
-    <div class="p-3 d-flex">
+<nav class="navbar navbar-dark-lg dark container-fluid">
+    <div class="container-fluid">
         <a class="navbar-brand " style="color:antiquewhite" href="/" >
             <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
         </a>
-        <!-- <a href="/about" class="nav-title">J Nurse Astrology</a> -->
-        <form action = "/bloghome" method="get"><input type="submit" value="Public Blog" class="btn dash btn-outline-success"></form>
+        <!-- <button type = "button" class = "dash-button"> -->
+            <!-- <a href="/dashboard" class="nav-title" style="font-weight: bolder;">Dashboard</a> -->
+        <!-- </button> -->
+
+    <div class="d-flex justify-content-right">
+        <ul class="navbar ml-auto" style ="list-style: none;">
+            <li class="nav-item ml-auto">
+                <button class="dash-button m-1"><a href="/admin/mailinglist" class="nav-link">Mailing List</a></button>
+            </li>
+            <!-- <li class="nav-item"> -->
+                <!-- <button class="dash-button m-1"><a href="/bloghome" class="nav-link">Public Blog Home</a></button> -->
+            <!-- </li> -->
+            <li class="nav-item">
+                <button class="dash-button m-1"><a href="/logout" class="nav-link">Logout</a></button>
+            </li>
+        </ul>
+    </div>
     </div>
 </nav>
 
+<div class="messages text-secondary text-center">
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for m in messages %}
+                    {{m}}
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+</div>
+
 <div class="container mt-10px">
     <h1 class="text-center dashhead mt-3">All Blogs Dashboard</h1>
-    <div class="text-center">
-        <h1></h1>
-        </div>
-        <!-- <p class="text-left">All Posted Blogs:</p> -->
-        <div class="justify-items-end">
-            <a href="/create" class="btn btn-success dash mg-3" > Create New Blog</a>
-        </div>
-        <!-- put this to the right -->
-        <div class="d-flex align-center align-items-center">
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th> Title:</th>
-                        <th> Meta-Title:</th>
-                        <th> Slug: </th>
-                        <th> Date: </th>
-                        <th> Category:</th>
-                        <th>Author:  </th>
-                        <th>Actions: </th>
-                    </tr>
-                </thead>
-                <tbody>
+    <div class="d-flex align-center align-items-center">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th> Title:</th>
+                    <th> Meta-Title:</th>
+                    <th> Slug: </th>
+                    <th> Date: </th>
+                    <th> Category:</th>
+                    <th>Author:  </th>
+                    <th>Actions: </th>
+                </tr>
+            </thead>
+            <tbody>
                 {% for blog in all_blogs %}
-                    <tr>
-                        <td>{{blog.title}}</td>
-                        <td>{{blog.metatitle[0]}}</td>
-                        <td>{{blog.slug[0]}}</td>
-                        <td>{{blog.date[0]}}</td>
-                        <td>{{blog.category[0]}}</td>
-                        <td>{{blog.cook.firstname[0]}}</td>
-                        <!-- <td>{{blog.cook.firstname}}</td> -->
-                        <td>
-                            <!-- <a href="/blog/{{blog.id[0]}}/{{blog.slug[0]}}">View</a> -->
-                            <!-- it was [[blog.id[0]]] -->
-                            <a href="/blog/{{blog.id[0]}}/{{blog.slug[0]}}">View</a>
+                <tr>
+                    <td>{{blog.title}}</td>
+                    <td>{{blog.metatitle}}</td>
+                    <td>{{blog.slug}}</td>
+                    <td>{{blog.date}}</td>
+                    <td>{{blog.category}}</td>
+                    <td>{{blog.cook.firstname[0]}}</td>
+                    <!-- <td>{{blog.cook.firstname}}</td> -->
+                    <td>
+                        <!-- <a href="/blog/{{blog.id[0]}}/{{blog.slug[0]}}">View</a> -->
+                        <!-- it was [[blog.id[0]]] -->
+                        <a href="/blog/{{blog.id}}/{{blog.slug}}">View</a>
                         <!-- % if blog.user_id == session.user_id % -->
-                        <a href="/blog_edit/{{blog.id[0]}}">| Edit |</a> <a href="/blog_delete/{{blog.id[0]}}"> Delete</a></td>
+                        <a href="/blog_edit/{{blog.id}}">| Edit |</a> <a href="/delete/{{blog.id}}"> Delete</a></td>
                         <!-- % endif % -->
                     </tr>
-                {% endfor %}
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
     </div>
 
-<div class="dashletter"></div>
+    <div class="text-center align-items-center pt-3">
+        <a href="/create" class="btn dash-button dash m-2" > Create New Blog</a>
+        <a href="/bloghome" class="btn dash-button dash m-2" > Public Blog Home</a>
+    </div>
 
-<div class="footer style-dark">
-    <div class="footer-text ">
-        Beeboop @ Copyright 2023 | Astrology LLC
+    <div class="dashletter"></div>
+
+    <div class="footer style-dark">
+    <div style="color:#d3d3d3">
+        Private Admin Page | Astrology LLC
     </div>
     <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
         <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>

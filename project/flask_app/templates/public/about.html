@@ -6,97 +6,75 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
 <link rel="stylesheet" href= "{{ url_for('static', filename='css/styleabout.css') }}">
+<!-- <link rel="stylesheet" href= "{{ url_for('static', filename='css/styleblog.css') }}"> -->
 <link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
-<title>J Norse</title>
+<title>Justin Jyotish Astrology</title>
 </head>
 <body>
 
+
+
 <nav class="navbar navbar-expand-lg navbar-dark dark container-fluid">
     <div class="container-fluid">
-    <a class="navbar-brand" style="color:antiquewhite" href="/" >
-        <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
-    </a>
-    <a href="/about" class="nav-title" style="font-weight: bolder;">J Nurse Astrology</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-                <a href="/menu" class="nav-link">Menu</a>
-            </li>
-            <li class="nav-item">
-                <a href="/bloghome" class="nav-link">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a href="/book" class="nav-link">Book</a>
-            </li>
-        </ul>
+        <div class="justify-content-left">
+            <a class="navbar-brand" style="color:antiquewhite" href="/" >
+                <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+            </a>
+            <a href="/about" class="nav-title">Justin Jyotish Astrology</a>
+        </div>
+        <div class="d-flex justify-content-right">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/menu" class="nav-link">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/bloghome" class="nav-link fw-bold">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/book" class="nav-link">Book</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
 
-<div class="about mt-5 mb-5">
-    <div class="">
-        <div class="aboutsec row">
-            <div class="abouttext col">
-                <h2>About the Website Owner</h2>
-                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.</p>
+<div class="about" style="background-image: url('{{ url_for('static', filename='imgs/background.jpeg') }}')">
+    <div class="container mt-3">
+        <div class=" ">
+            <!-- justify content around flex direction row align content start flex wrap-->
+            <div class="p-5 d-flex align-items-center justify-content-center">
+                <img src="{{url_for('static', filename='imgs/img2.png')}}" class="photo rounded-circle " alt="Photograph">
             </div>
-            <!-- <div class=""> -->
-                <img src="{{url_for('static', filename='imgs/img2.png')}}" class="aboutimage" alt="">
-            <!-- </div> -->
-        </div>
-        <!-- <div class=""></div> -->
-        <div class="aboutsec row">
-            <img src=" {{url_for('static', filename='imgs/img2.png')}}" class="aboutimage" alt="">
-            <!-- position absolute messed things up -->
-            <div class="abouttext col">
-                <h2>Jyotish Lineage</h2>
-                <p> Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum tincidunt a sit amet justo.</p>
+            <div class="pl-3 pr-3">
+                <h2 class="fw-bold ">About </h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. HISTORY, PURPOSE AND USAGELorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with: “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquThe purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum....</p>
             </div>
-        </div>
-    </div>
-</div>
 
-<!-- <div class="container mt-5"> -->
-<!-- <div class="row"> -->
-    <!-- <div class="col-lg-6"> -->
-    <!-- <div class="aboutsec"> -->
-        <!-- <h2>About the Website Owner</h2> -->
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum tincidunt a sit amet justo.</p> -->
-    <!-- </div> -->
-    <!-- </div> -->
-    <!-- <div class="col-lg-6"> -->
-    <!-- <div class="aboutsec"> -->
-        <!-- <h2>About the Culture</h2> -->
-        <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum tincidunt a sit amet justo.</p> -->
-    <!-- </div> -->
-    <!-- </div> -->
-<!-- </div> -->
-<!-- </div> -->
-
+            <div class="pl-3 pr-3 pb-5 pt-5">
+                <h2 class="fw-bold">Jyotish Lineage</h2>
+                <p class="d-flex justify-content-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. HISTORY, PURPOSE AND USAGELorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book. It usually begins with: “Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquThe purpose of lorem ipsum is to create a natural looking block of text (sentence, paragraph, page, etc.) that doesn't distract from the layout. A practice not without controversy, laying out pages with meaningless filler text can be very useful when the focus is meant to be on design, not content.The passage experienced a surge in popularity during the 1960s when Letraset used it on their dry-transfer sheets, and again during the 90s as desktop publishers bundled the text with their software. Today it's seen all around the web; on templates, websites, and stock designs. Use our generator to get your own, or read on for the authoritative history of lorem ipsum....</p>
+            </div>
+</div></div>
 
 <div class="newsletter">
     <h2 class="text-center">Newsletter</h2>
     <p class="text-center">Monthly Astro-Alerts, No Spam.</p>
-    <form action="#" method="post" class="newsform d-flex justify-content-center">
+    <form action="/mailinglist" method="post" class="newsform d-flex justify-content-center">
         <input type="email" id="email" name="email" class="newsform" styles="" placeholder="Your Email" required>
+
         <button type="submit" class= "newform-button btn">Subscribe</button>
     </form>
 </div>
-<div class="footer style-dark">
+
+<div class="footer style-dark" style="background-color:black">
     <div class="footer-text ">
-        J Nur @ Copyright 2023 | Astrology LLC
+        Justin Jyotish @ Copyright 2023 | Astrology LLC
     </div>
     <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
         <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>
-    </div>
+    </a>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.4.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 </html>
 
@@ -115,5 +93,3 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
-</body>
-</html>

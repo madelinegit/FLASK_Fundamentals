@@ -64,17 +64,11 @@ def dashboard():
     user_data = {
         'id' : session ['user_id']
         }
-    print("user_data: ", user_data)
+    # print("user_data: ", user_data)
     # user = User.get_one(user_data)user=user,
     all_blogs = Blog.get_all()
-    print("all_blogs", all_blogs)
+    print("**********ALL_BLOGS ********** ", all_blogs)
     return render_template('/admin/admin_dashboard.html',  all_blogs=all_blogs)
-
-# @app.route('/createpage')
-# def createpage():
-#     if 'user_id' not in session:
-#         return redirect('/login')
-#     return render_template('create_blog.html')
 
 @app.route('/create')
 def create():
@@ -95,28 +89,30 @@ def blog_create():
             'date' : request.form['date'],
             'category' : request.form['category'],
             'content' : request.form['content'],
+            'image' : request.form['image'],
             'user_id' : session['user_id']
         }
 
-    print(newdata)
+    print("****NEWDATA*****", newdata)
     id=Blog.blog_create(newdata) ####NEWDATA
     print("blog saved")
     return redirect('/dashboard')
 
-# @app.route('/blog/<int:id>', defaults={'u_path': ''})
-# @app.route('/<path:path>')
-# @app.route('/blog/<int:id>')
-# @app.route('/blog/<int:id>/<path:u_path>') #flask routing ignore slug
-#string:slug
 @app.route('/blog/<int:id>/<slug>')
 def blog_read(id, slug):
     blog_data = {
         'id' : id
     }
     blog=Blog.get_one_blog(blog_data)
-    print("BLOG: ",blog)
+    image=Blog.get_image(blog_data)
+    print("BLOG: ", blog.image)
     print(blog.metatitle)
-    return render_template('/admin/blogstyle.html', blog=blog)
+    print(blog.image[0])
+
+    # print(blog.image.decode('utf-8'))
+    # treid with blog.image[0].decode('utf-8')
+    #tried without the [0]
+    return render_template('/admin/blogstyle.html', blog=blog, image=image)
 
 @app.route('/blog_edit/<int:id>')
 def blog_read_edit(id):
@@ -125,6 +121,7 @@ def blog_read_edit(id):
     blog_data = {
         'id' : id
     }
+    print("**BLOG_DATA***", blog_data)
     blog=Blog.get_one_blog(blog_data)
     return render_template('/admin/blog_edit.html', blog=blog)
 
@@ -132,15 +129,21 @@ def blog_read_edit(id):
 def blog_update(id):
     if 'user_id' not in session:
         return redirect('/login')
-    # isValid=Blog.blog_validate(request.form)
-    # if not isValid:
-    #     flash("Input not valid.")
-    #     return redirect(f'/blog_edit/{id}')
+    isValid=Blog.validateBlog(request.form)
+    if not isValid:
+        flash("Fill all forms, & use proper-slug-format.")
+        print("line 139 controller")
+        return redirect(f'/blog_edit/{id}')
     print("controller line 139")
+    # data = {
+    #     "id" : id
+    # }
+    print("***DATA FOR MODEL ln144****")
+    print("request.form", request.form)
     Blog.update(request.form, id)
     return redirect('/dashboard')
 
-@app.route('/blog_delete/<int:id>')
+@app.route('/delete/<int:id>')
 def blog_delete(id):
     data = {
         "id" : id

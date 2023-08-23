@@ -27,21 +27,30 @@ class User:
         """
         return connectToMySQL(db).query_db(query,newdata)
 
-    #Used anywhere?
+    #ADD TO MAILING LIST
     @classmethod
-    def get_one(cls, data):
-        query = """
-            SELECT * FROM users
-            WHERE id = %(id)s;
-            """
-        results = connectToMySQL(db).query_db(query, data)
-        print("get_one user cls(results[0]) ", cls(results[0]))
-        print("get_one user results: ", results)
-        if len(results) < 1:
-            #flash something
-            return False
-        # print("get_one user cls(results[0].data) ", cls(results[0].data))
-        return cls(results[0])
+    def blog_create (cls, newdata):
+        query="""
+        INSERT INTO mailinglist (email)
+        VALUES (%(email)s);
+        """
+        return connectToMySQL(db).query_db(query,newdata)
+
+    # #Used anywhere?
+    # @classmethod
+    # def get_one(cls, data):
+    #     query = """
+    #         SELECT * FROM users
+    #         WHERE id = %(id)s;
+    #         """
+    #     results = connectToMySQL(db).query_db(query, data)
+    #     print("get_one user cls(results[0]) ", cls(results[0]))
+    #     print("get_one user results: ", results)
+    #     if len(results) < 1:
+    #         #flash something
+    #         return False
+    #     # print("get_one user cls(results[0].data) ", cls(results[0].data))
+    #     return cls(results[0])
 
     #LOGIN GET FROM NAME
     @classmethod
@@ -52,25 +61,24 @@ class User:
                 """
         print("ran query")
         results = connectToMySQL(db).query_db(query,data)
-        print("results from model: ",results[0])
+        print("results from model: ",results)
         # if len(results)<1:
         #     print("GetName: no results, returns false")
         #     return False
         print("GetName had result")
-        print (results[0])
-        return results[0]
+        print (results)
+        return results
 
     # getName("Admin")
 
-    @classmethod
-    def get_all(cls, data):
-        query = "SELECT * FROM users;"
-        results = connectToMySQL(db).query_db(query)
-        users = []
-        for row in results:
-            users.append(cls(row), data)
-        return users
-
+    # @classmethod
+    # def get_all(cls, data):
+    #     query = "SELECT * FROM users;"
+    #     results = connectToMySQL(db).query_db(query)
+    #     users = []
+    #     for row in results:
+    #         users.append(cls(row), data)
+    #     return users
 
 
     @classmethod

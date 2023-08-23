@@ -7,31 +7,30 @@
 <link rel="stylesheet" href= "{{ url_for('static', filename='css/style.css') }}">
 <link rel="stylesheet" href= "{{ url_for('static', filename='css/stylemenu.css') }}">
 <link rel ='icon' type= 'img/png' href="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
-<title>J Norse</title>
+<title>Justin Jyotish Astrology</title>
 </head>
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark dark container-fluid">
     <div class="container-fluid">
-    <a class="navbar-brand" style="color:antiquewhite" href="/" >
-        <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
-    </a>
-    <a href="/about" class="nav-title">J Nurse Astrology</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item selected-nav">
-                <a href="/menu" class="nav-link fw-bold">Menu</a>
-            </li>
-            <li class="nav-item">
-                <a href="/bloghome" class="nav-link">Blog</a>
-            </li>
-            <li class="nav-item">
-                <a href="/book" class="nav-link">Book</a>
-            </li>
-        </ul>
+        <div class="justify-content-left">
+            <a class="navbar-brand" style="color:antiquewhite" href="/" >
+                <img src="{{url_for('static', filename='imgs/img2.png')}}" alt="" width="32" height="32" class="rounded-circle me-2">
+            </a>
+            <a href="/about" class="nav-title">Justin Jyotish Astrology</a>
+        </div>
+        <div class="d-flex justify-content-right">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/menu" class="nav-link fw-bold">Menu</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/bloghome" class="nav-link ">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/book" class="nav-link">Book</a>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
@@ -43,7 +42,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum.</p>
         <div class="option-footer">
             <span class="option-price">$300</span>
-            <a href="/book"><button class="book-button" >Book Now</button></a>
+            <a href="/book"><button class="book-button" > Book Now </button></a>
         </div>
     </div>
     <div class="option">
@@ -52,7 +51,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum.</p>
         <div class="option-footer">
             <span class="option-price">$300</span>
-            <a href="/book"><button class="book-button">Book Now</button></a>
+            <a href="/book"><button class="book-button"> Book Now </button></a>
         </div>
     </div>
     <div class="option">
@@ -61,7 +60,7 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae odio eget libero vestibulum.</p>
         <div class="option-footer">
             <span class="option-price">$300</span>
-            <a href="/book"> <button class="book-button">Book Now</button></a>
+            <a href="/book"> <button class="book-button"> Book Now </button></a>
         </div>
     </div>
 </div>
@@ -69,7 +68,7 @@
 <div class="newsletter">
     <h2 class="text-center">Newsletter</h2>
     <p class="text-center">Monthly Astro-Alerts, No Spam.</p>
-    <form action="#" method="post" class="newsform d-flex justify-content-center">
+    <form action="mailinglist" method="post" class="newsform d-flex justify-content-center">
         <input type="email" id="email" name="email" class="newsform" styles="" placeholder="Your Email" required>
 
         <button type="submit" class= "newform-button btn">Subscribe</button>
@@ -78,7 +77,7 @@
 
     <div class="footer style-dark">
         <div class="footer-text ">
-            J Norse @ Copyright 2023 | Astrology LLC
+            Justin Jyotish @ Copyright 2023 | Astrology LLC
         </div>
         <a href="https://www.instagram.com/the.blue.throated.one/" class="footer-icon">
             <img src="{{url_for('static', filename='imgs/insta.png')}}"></img>

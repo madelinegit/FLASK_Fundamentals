@@ -22,22 +22,35 @@
 <div class="container mt-10px">
     <!-- ^ had mt-10px -->
     <h1 class="text-center">Edit Blog</h1>
+    <div class="messages text-secondary text-center">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for m in messages %}
+                        {{m}}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
     <!-- <div class="d-flex justify-content-center align-items-center"> -->
         <!-- <img src="{{url_for('static', filename='imgs/img1.png')}}" class="image-fluid" alt=""> -->
     <!-- </div> -->
     <div class="container mt-5">
-        <form action="/blog_update/{{blog.id[0]}}" method="POST">
+        <form action="/blog_update/{{blog.id}}" method="POST">
+
             <div class="mb-3">
                 <label for="title" class="form-label">Title</label>
                 <textarea class="form-control" id="title" name="title "required> {{blog.title}} </textarea>
+                <!--  Text Are Threw Error  Title-->
+                <!-- <input type="text" textarea class="form-control" id="title" name="title" autofill="{{blog.title}}" required> </input> -->
             </div>
             <div class="mb-3">
                 <label for="metatitle" class="form-label">Meta Title</label>
-                <textarea class="form-control" id="metatitle" name="metatitle"required> {{blog.metatitle[0]}} </textarea>
+                <textarea class="form-control" id="metatitle" name="metatitle"> {{blog.metatitle}} </textarea>
             </div>
             <div class="mb-3">
                 <label for="slug" class="form-label">Slug</label>
-                <input type="text" textarea class="form-control" id="slug" name="slug" autofill="{{blog.slug[0]}}" required>
+                <textarea class="form-control" id="slug" name="slug" required> {{blog.slug}} </textarea>
+                <!-- <input type="text" textarea class="form-control" id="slug" name="slug" autofill="{{blog.slug[0]}}" required> -->
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
@@ -45,13 +58,18 @@
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label">Category</label>
-                <textarea class ="form-control" id="category" name="category" required>{{blog.category[0]}}</textarea>
+                <textarea class ="form-control" id="category" name="category" required>{{blog.category}}</textarea>
             </div>
             <div class="mb-3">
                 <label for="content" class="form-label" >Content</label>
                 <textarea class="form-control" id="content"  name="content" rows="100" required>{{blog.content}}</textarea>
             </div>
-            <button type="submit" class="btn btn-success dash mg-3">Submit</button>
+            <!-- <div class="mb-3"> -->
+                <!-- <label for="image" class="form-label">Image</label> -->
+                <!-- <input type="file" class="form-control" id="image" name="image" accept="image/*" > -->
+                <!-- how to load existing file? -->
+            <!-- </div> -->
+            <button type="submit" class="btn btn-success dash mg-3">Save</button>
 
             <script>
                 // Set default value for the date input to today's date
